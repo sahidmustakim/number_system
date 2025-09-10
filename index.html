@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number System Pro - Advanced Converter & Calculator</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔢</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Number System Pro</h1>
+            <p class="subtitle">Specialized Base Conversion, Arithmetic & Base Finding Tool</p>
+        </header>
+
+        <div class="tabs">
+            <button class="tab active" data-tab="main-converter">Main Bases</button>
+            <button class="tab" data-tab="general-converter">General Bases</button>
+            <button class="tab" data-tab="calculator">Arithmetic Calculator</button>
+            <button class="tab" data-tab="base-finder">Base Finder</button>
+            <button class="tab" data-tab="manual">User Manual</button>
+        </div>
+
+        <div class="tab-content active" id="main-converter">
+            <div class="input-group">
+                <label for="source-base-main">Source Base:</label>
+                <select id="source-base-main">
+                    <option value="2">Binary (Base 2)</option>
+                    <option value="8">Octal (Base 8)</option>
+                    <option value="10" selected>Decimal (Base 10)</option>
+                    <option value="16">Hexadecimal (Base 16)</option>
+                </select>
+            </div>
+            
+            <div class="input-group">
+                <label for="main-input">Input Value:</label>
+                <input type="text" id="main-input" placeholder="Enter value..." autofocus>
+                <div class="error-message" id="main-input-error"></div>
+            </div>
+            
+            <div class="conversion-grid">
+                <div class="conversion-card">
+                    <h3>Binary (Base 2)</h3>
+                    <div class="conversion-value" id="binary-value">-</div>
+                    <div class="conversion-details" id="binary-details"></div>
+                </div>
+                <div class="conversion-card">
+                    <h3>Octal (Base 8)</h3>
+                    <div class="conversion-value" id="octal-value">-</div>
+                    <div class="conversion-details" id="octal-details"></div>
+                </div>
+                <div class="conversion-card">
+                    <h3>Decimal (Base 10)</h3>
+                    <div class="conversion-value" id="decimal-value">-</div>
+                    <div class="conversion-details" id="decimal-details"></div>
+                </div>
+                <div class="conversion-card">
+                    <h3>Hexadecimal (Base 16)</h3>
+                    <div class="conversion-value" id="hex-value">-</div>
+                    <div class="conversion-details" id="hex-details"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="general-converter">
+            <div class="input-group">
+                <label for="source-base">Source Base:</label>
+                <select id="source-base">
+                    <option value="2">Binary (Base 2)</option>
+                    <option value="3">Ternary (Base 3)</option>
+                    <option value="4">Quaternary (Base 4)</option>
+                    <option value="5">Quinary (Base 5)</option>
+                    <option value="6">Senary (Base 6)</option>
+                    <option value="7">Septenary (Base 7)</option>
+                    <option value="8">Octal (Base 8)</option>
+                    <option value="9">Nonary (Base 9)</option>
+                    <option value="10" selected>Decimal (Base 10)</option>
+                    <option value="11">Undecimal (Base 11)</option>
+                    <option value="12">Duodecimal (Base 12)</option>
+                    <option value="13">Tridecimal (Base 13)</option>
+                    <option value="14">Tetradecimal (Base 14)</option>
+                    <option value="15">Pentadecimal (Base 15)</option>
+                    <option value="16">Hexadecimal (Base 16)</option>
+                    <option value="17">Heptadecimal (Base 17)</option>
+                    <option value="18">Octodecimal (Base 18)</option>
+                    <option value="19">Nonadecimal (Base 19)</option>
+                    <option value="20">Vigesimal (Base 20)</option>
+                    <option value="21">Unvigesimal (Base 21)</option>
+                    <option value="22">Duovigesimal (Base 22)</option>
+                    <option value="23">Trivigesimal (Base 23)</option>
+                    <option value="24">Tetravigesimal (Base 24)</option>
+                    <option value="25">Pentavigesimal (Base 25)</option>
+                    <option value="26">Hexavigesimal (Base 26)</option>
+                    <option value="27">Heptavigesimal (Base 27)</option>
+                    <option value="28">Octovigesimal (Base 28)</option>
+                    <option value="29">Nonavigesimal (Base 29)</option>
+                    <option value="30">Trigesimal (Base 30)</option>
+                    <option value="31">Untrigesimal (Base 31)</option>
+                    <option value="32">Duotrigesimal (Base 32)</option>
+                    <option value="33">Tritrigesimal (Base 33)</option>
+                    <option value="34">Tetratrigesimal (Base 34)</option>
+                    <option value="35">Pentatrigesimal (Base 35)</option>
+                    <option value="36">Hexatrigesimal (Base 36)</option>
+                </select>
+            </div>
+            
+            <div class="input-group">
+                <label for="target-base">Target Base:</label>
+                <select id="target-base">
+                    <option value="2">Binary (Base 2)</option>
+                    <option value="3">Ternary (Base 3)</option>
+                    <option value="4">Quaternary (Base 4)</option>
+                    <option value="5">Quinary (Base 5)</option>
+                    <option value="6">Senary (Base 6)</option>
+                    <option value="7">Septenary (Base 7)</option>
+                    <option value="8">Octal (Base 8)</option>
+                    <option value="9">Nonary (Base 9)</option>
+                    <option value="10">Decimal (Base 10)</option>
+                    <option value="11">Undecimal (Base 11)</option>
+                    <option value="12">Duodecimal (Base 12)</option>
+                    <option value="13">Tridecimal (Base 13)</option>
+                    <option value="14">Tetradecimal (Base 14)</option>
+                    <option value="15">Pentadecimal (Base 15)</option>
+                    <option value="16" selected>Hexadecimal (Base 16)</option>
+                    <option value="17">Heptadecimal (Base 17)</option>
+                    <option value="18">Octodecimal (Base 18)</option>
+                    <option value="19">Nonadecimal (Base 19)</option>
+                    <option value="20">Vigesimal (Base 20)</option>
+                    <option value="21">Unvigesimal (Base 21)</option>
+                    <option value="22">Duovigesimal (Base 22)</option>
+                    <option value="23">Trivigesimal (Base 23)</option>
+                    <option value="24">Tetravigesimal (Base 24)</option>
+                    <option value="25">Pentavigesimal (Base 25)</option>
+                    <option value="26">Hexavigesimal (Base 26)</option>
+                    <option value="27">Heptavigesimal (Base 27)</option>
+                    <option value="28">Octovigesimal (Base 28)</option>
+                    <option value="29">Nonavigesimal (Base 29)</option>
+                    <option value="30">Trigesimal (Base 30)</option>
+                    <option value="31">Untrigesimal (Base 31)</option>
+                    <option value="32">Duotrigesimal (Base 32)</option>
+                    <option value="33">Tritrigesimal (Base 33)</option>
+                    <option value="34">Tetratrigesimal (Base 34)</option>
+                    <option value="35">Pentatrigesimal (Base 35)</option>
+                    <option value="36">Hexatrigesimal (Base 36)</option>
+                </select>
+            </div>
+            
+            <div class="input-group">
+                <label for="input-value">Input Value:</label>
+                <input type="text" id="input-value" placeholder="Enter value...">
+                <div class="error-message" id="converter-error"></div>
+            </div>
+            
+            <button id="convert-btn" class="primary-btn">Convert</button>
+            
+            <div class="result-section">
+                <h3>Result:</h3>
+                <div class="result-value" id="conversion-result">-</div>
+                <div class="result-details" id="conversion-details"></div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="calculator">
+            <div class="input-group">
+                <label for="calc-base">Number Base:</label>
+                <select id="calc-base">
+                    <option value="2">Binary (Base 2)</option>
+                    <option value="3">Ternary (Base 3)</option>
+                    <option value="4">Quaternary (Base 4)</option>
+                    <option value="5">Quinary (Base 5)</option>
+                    <option value="6">Senary (Base 6)</option>
+                    <option value="7">Septenary (Base 7)</option>
+                    <option value="8">Octal (Base 8)</option>
+                    <option value="9">Nonary (Base 9)</option>
+                    <option value="10" selected>Decimal (Base 10)</option>
+                    <option value="11">Undecimal (Base 11)</option>
+                    <option value="12">Duodecimal (Base 12)</option>
+                    <option value="13">Tridecimal (Base 13)</option>
+                    <option value="14">Tetradecimal (Base 14)</option>
+                    <option value="15">Pentadecimal (Base 15)</option>
+                    <option value="16">Hexadecimal (Base 16)</option>
+                    <option value="17">Heptadecimal (Base 17)</option>
+                    <option value="18">Octodecimal (Base 18)</option>
+                    <option value="19">Nonadecimal (Base 19)</option>
+                    <option value="20">Vigesimal (Base 20)</option>
+                    <option value="21">Unvigesimal (Base 21)</option>
+                    <option value="22">Duovigesimal (Base 22)</option>
+                    <option value="23">Trivigesimal (Base 23)</option>
+                    <option value="24">Tetravigesimal (Base 24)</option>
+                    <option value="25">Pentavigesimal (Base 25)</option>
+                    <option value="26">Hexavigesimal (Base 26)</option>
+                    <option value="27">Heptavigesimal (Base 27)</option>
+                    <option value="28">Octovigesimal (Base 28)</option>
+                    <option value="29">Nonavigesimal (Base 29)</option>
+                    <option value="30">Trigesimal (Base 30)</option>
+                    <option value="31">Untrigesimal (Base 31)</option>
+                    <option value="32">Duotrigesimal (Base 32)</option>
+                    <option value="33">Tritrigesimal (Base 33)</option>
+                    <option value="34">Tetratrigesimal (Base 34)</option>
+                    <option value="35">Pentatrigesimal (Base 35)</option>
+                    <option value="36">Hexatrigesimal (Base 36)</option>
+                </select>
+            </div>
+            
+            <div class="input-group">
+                <label for="num1">First Number:</label>
+                <input type="text" id="num1" placeholder="Enter first number...">
+                <div class="error-message" id="num1-error"></div>
+            </div>
+            
+            <div class="input-group">
+                <label for="operation">Operation:</label>
+                <select id="operation">
+                    <option value="add">Addition (+)</option>
+                    <option value="subtract">Subtraction (-)</option>
+                    <option value="multiply">Multiplication (×)</option>
+                    <option value="divide">Division (÷)</option>
+                </select>
+            </div>
+            
+            <div class="input-group">
+                <label for="num2">Second Number:</label>
+                <input type="text" id="num2" placeholder="Enter second number...">
+                <div class="error-message" id="num2-error"></div>
+            </div>
+            
+            <button id="calculate-btn" class="primary-btn">Calculate</button>
+            
+            <div class="result-section">
+                <h3>Result:</h3>
+                <div class="result-value" id="calc-result">-</div>
+                <div class="result-details" id="calc-details"></div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="base-finder">
+            <div class="input-group">
+                <label for="equation">Base Equation:</label>
+                <input type="text" id="equation" placeholder="(12)r + (13)r = (25)r">
+                <div class="example">Examples: (12)r + (13)r = (25)r, (101)r × (10)r = (1010)r, (123)r = (53)10</div>
+            </div>
+            
+            <div class="input-group">
+                <label for="min-base">Minimum Base (optional):</label>
+                <input type="number" id="min-base" min="2" max="36" placeholder="Auto-determined">
+            </div>
+            
+            <div class="input-group">
+                <label for="max-base">Maximum Base (optional):</label>
+                <input type="number" id="max-base" min="2" max="36" value="36" placeholder="36">
+            </div>
+            
+            <button id="find-base-btn" class="primary-btn">Find Valid Bases</button>
+            
+            <div class="result-section">
+                <h3>Results:</h3>
+                <div class="result-value" id="base-result">-</div>
+                <div class="result-details" id="base-details"></div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="manual">
+            <h2>Using Number System Pro</h2>
+            
+            <section class="manual-section">
+                <h3>1. Main Bases Converter</h3>
+                <p>The Main Bases section converts between the four most common number systems in real-time:</p>
+                
+                <div class="screenshot">
+                    <div class="screenshot-content">
+                        <div class="input-group">
+                            <label>Source Base:</label>
+                            <select disabled>
+                                <option>Binary (Base 2)</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Input Value:</label>
+                            <input type="text" value="101010" readonly>
+                        </div>
+                        <div class="conversion-grid">
+                            <div class="conversion-card">
+                                <h3>Binary (Base 2)</h3>
+                                <div class="conversion-value">101010</div>
+                            </div>
+                            <div class="conversion-card">
+                                <h3>Octal (Base 8)</h3>
+                                <div class="conversion-value">52</div>
+                            </div>
+                            <div class="conversion-card">
+                                <h3>Decimal (Base 10)</h3>
+                                <div class="conversion-value">42</div>
+                            </div>
+                            <div class="conversion-card">
+                                <h3>Hexadecimal (Base 16)</h3>
+                                <div class="conversion-value">2A</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="caption">Figure 1: Main Bases Converter - Convert between binary, octal, decimal, and hex</p>
+                </div>
+                
+                <h4>How to Use:</h4>
+                <ol>
+                    <li>Select your source base (binary, octal, decimal, or hex)</li>
+                    <li>Enter your value in the input field</li>
+                    <li>Watch as all four representations update in real-time</li>
+                    <li>Click on any value to see detailed conversion steps</li>
+                </ol>
+                
+                <div class="tip-box">
+                    <h4>Tip:</h4>
+                    <p>Try entering "101010" in binary, "52" in octal, "42" in decimal, or "2A" in hex - all will show the same value across all bases!</p>
+                </div>
+            </section>
+            
+            <section class="manual-section">
+                <h3>2. General Base Converter</h3>
+                <p>Use this section for conversions between any bases from 2 to 36:</p>
+                
+                <div class="screenshot">
+                    <div class="screenshot-content">
+                        <div class="input-group">
+                            <label>Source Base:</label>
+                            <select disabled>
+                                <option>Base 5</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Target Base:</label>
+                            <select disabled>
+                                <option>Base 9</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Input Value:</label>
+                            <input type="text" value="123" readonly>
+                        </div>
+                        <button class="primary-btn" disabled>Convert</button>
+                        <div class="result-section">
+                            <h3>Result:</h3>
+                            <div class="result-value">42</div>
+                            <div class="result-details">
+                                <strong>Step 1: Convert (123)₅ to decimal:</strong><br>
+                                1×5² + 2×5¹ + 3×5⁰ = 25 + 10 + 3 = 38<br>
+                                <strong>Step 2: Convert 38 to base 9:</strong><br>
+                                38 ÷ 9 = 4 remainder 2 → (42)₉
+                            </div>
+                        </div>
+                    </div>
+                    <p class="caption">Figure 2: General Base Converter - Convert between any bases with detailed steps</p>
+                </div>
+                
+                <h4>How to Use:</h4>
+                <ol>
+                    <li>Select your source base from the dropdown</li>
+                    <li>Select your target base from the dropdown</li>
+                    <li>Enter your value in the input field</li>
+                    <li>Click "Convert" to see the result and detailed steps</li>
+                </ol>
+                
+                <div class="warning-box">
+                    <h4>Important:</h4>
+                    <p>If you enter an invalid digit for your selected base (e.g., '5' in base 4), the system will highlight the error and explain which digit is invalid.</p>
+                </div>
+            </section>
+            
+            <section class="manual-section">
+                <h3>3. Arithmetic Calculator</h3>
+                <p>Perform calculations in any number base:</p>
+                
+                <div class="screenshot">
+                    <div class="screenshot-content">
+                        <div class="input-group">
+                            <label>Number Base:</label>
+                            <select disabled>
+                                <option>Base 5</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>First Number:</label>
+                            <input type="text" value="12" readonly>
+                        </div>
+                        <div class="input-group">
+                            <label>Operation:</label>
+                            <select disabled>
+                                <option>Addition (+)</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Second Number:</label>
+                            <input type="text" value="13" readonly>
+                        </div>
+                        <button class="primary-btn" disabled>Calculate</button>
+                        <div class="result-section">
+                            <h3>Result:</h3>
+                            <div class="result-value">30</div>
+                            <div class="result-details">
+                                <strong>Step 1: Convert to decimal</strong><br>
+                                (12)₅ = 7<br>
+                                (13)₅ = 8<br>
+                                <strong>Step 2: Perform addition in decimal</strong><br>
+                                7 + 8 = 15<br>
+                                <strong>Step 3: Convert result back to base 5</strong><br>
+                                15 = (30)₅
+                            </div>
+                        </div>
+                    </div>
+                    <p class="caption">Figure 3: Arithmetic Calculator - Perform operations in any base with detailed steps</p>
+                </div>
+                
+                <h4>How to Use:</h4>
+                <ol>
+                    <li>Select the base for your calculation</li>
+                    <li>Enter the first number</li>
+                    <li>Choose the operation (+, -, ×, ÷)</li>
+                    <li>Enter the second number</li>
+                    <li>Click "Calculate" to see the result and detailed steps</li>
+                </ol>
+            </section>
+            
+            <section class="manual-section">
+                <h3>4. Base Finder</h3>
+                <p>Solve base finding problems like "(12)r + (13)r = (25)r":</p>
+                
+                <div class="screenshot">
+                    <div class="screenshot-content">
+                        <div class="input-group">
+                            <label>Base Equation:</label>
+                            <input type="text" value="(12)r + (13)r = (25)r" readonly>
+                        </div>
+                        <button class="primary-btn" disabled>Find Valid Bases</button>
+                        <div class="result-section">
+                            <h3>Results:</h3>
+                            <div class="result-value">r > 5</div>
+                            <div class="result-details">
+                                <strong>Step 1: Convert each number to base 10.</strong><br>
+                                (12)r = 1×r + 2 = r + 2<br>
+                                (13)r = 1×r + 3 = r + 3<br>
+                                (25)r = 2×r + 5 = 2r + 5<br><br>
+                                
+                                <strong>Step 2: Set up the equation in base 10.</strong><br>
+                                (r + 2) + (r + 3) = 2r + 5<br><br>
+                                
+                                <strong>Step 3: Simplify both sides.</strong><br>
+                                Left side: r + 2 + r + 3 = 2r + 5<br>
+                                Right side: 2r + 5<br>
+                                So: 2r + 5 = 2r + 5<br><br>
+                                
+                                <strong>Step 4: Solve</strong><br>
+                                Since both sides are equal for any r, the equation holds for all values of r.<br><br>
+                                
+                                <strong>Step 5: Apply base constraints</strong><br>
+                                In base r, all digits must be less than r.<br>
+                                From the digits: 1, 2, 3, 5 — the largest digit is 5, so: r > 5<br>
+                                Also, base must be an integer greater than 1: r ∈ ℕ and r > 5<br><br>
+                                
+                                <strong>✅ Final Answer:</strong><br>
+                                r can be any integer such that r > 5
+                            </div>
+                        </div>
+                    </div>
+                    <p class="caption">Figure 4: Base Finder - Solve equations with detailed step-by-step solutions</p>
+                </div>
+                
+                <h4>How to Use:</h4>
+                <ol>
+                    <li>Enter your equation using the format "(12)r + (13)r = (25)r"</li>
+                    <li>Optionally set minimum and maximum base values</li>
+                    <li>Click "Find Valid Bases" to see the solution with detailed steps</li>
+                </ol>
+                
+                <div class="tip-box">
+                    <h4>Tip:</h4>
+                    <p>The system automatically determines the minimum possible base based on the digits used. For example, if your equation contains the digit '5', the minimum base will be set to 6.</p>
+                </div>
+                
+                <h4>Supported Equation Types:</h4>
+                <ul>
+                    <li><strong>Addition equations:</strong> (12)r + (13)r = (25)r</li>
+                    <li><strong>Subtraction equations:</strong> (30)r - (13)r = (12)r</li>
+                    <li><strong>Multiplication equations:</strong> (12)r × (2)r = (24)r</li>
+                    <li><strong>Decimal comparisons:</strong> (123)r = (53)10</li>
+                    <li><strong>Multiple operations:</strong> (12)r + (13)r - (5)r = (20)r</li>
+                </ul>
+            </section>
+            
+            <section class="manual-section">
+                <h3>5. Handling Corner Cases</h3>
+                
+                <h4>Case 1: Multiple Valid Bases</h4>
+                <p>For equations like (12)r + (13)r = (25)r, multiple bases may be valid:</p>
+                <div class="example-box">
+                    <strong>Input:</strong> (12)r + (13)r = (25)r<br>
+                    <strong>Output:</strong> r > 5<br>
+                    <strong>Explanation:</strong> The equation holds for all bases greater than 5 because the largest digit is 5.
+                </div>
+                
+                <h4>Case 2: Single Valid Base</h4>
+                <p>For equations like (12)r + (13)r = (30)r, only one base may be valid:</p>
+                <div class="example-box">
+                    <strong>Input:</strong> (12)r + (13)r = (30)r<br>
+                    <strong>Output:</strong> r = 5<br>
+                    <strong>Explanation:</strong> Solving gives r = 5, and verification shows (12)₅ + (13)₅ = 7 + 8 = 15 = (30)₅.
+                </div>
+                
+                <h4>Case 3: No Valid Base</h4>
+                <p>Some equations have no solution:</p>
+                <div class="example-box">
+                    <strong>Input:</strong> (12)r = (5)r<br>
+                    <strong>Output:</strong> No solution<br>
+                    <strong>Explanation:</strong> This would require 1×r + 2 = 5, so r = 3, but base 3 cannot have digit '5'.
+                </div>
+                
+                <h4>Case 4: Fractional Results</h4>
+                <p>For division operations that result in fractions:</p>
+                <div class="example-box">
+                    <strong>Input:</strong> (10)r ÷ (2)r<br>
+                    <strong>Output:</strong> 5 (for r > 5)<br>
+                    <strong>Explanation:</strong> In bases where both numbers are valid (r > 5), this equals 5 in decimal.
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <p>Number System Pro &copy; 2023 | Specialized Number System Tools</p>
+            <p class="small">Dedicated sections for main bases with real-time updates and detailed base finding solutions</p>
+        </footer>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
