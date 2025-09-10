@@ -1,7 +1,4 @@
-# 🔢 Number System Pro
-
-[![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-Deployed-brightgreen)](https://your-username.github.io/number-system-converter)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+# 🔢 Number System
 
 A professional-grade tool for number system operations with specialized functionality for computer science education and practical applications.
 
